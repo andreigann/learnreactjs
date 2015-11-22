@@ -29,11 +29,12 @@ export function next(state) {
 	}
 }
 
-export const INITIAL_STATE = Map();
-
 export function vote(state, entry) {
-	return state.updateIn(['vote', 'tally', entry],
-	0,
-	tally => tally + 1
+	return state.updateIn(
+		['tally', entry],
+		0,
+		tally => tally + 1
 	);
 }
+
+export const INITIAL_STATE = Map();
